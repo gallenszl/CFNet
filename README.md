@@ -12,13 +12,12 @@ Recently, the ever-increasing capacity of large-scale annotated datasets has led
 ## Citation
 If you find this code useful in your research, please cite:
 ```
-@inproceedings{cfnet,
-title={CFNet: Cascade and Fused Cost Volume for
-Robust Stereo Matching},
-author={Zhelun Shen and Yuchao Dai and Zhibo
-Rao},
-booktitle={IEEE Conference on Computer Vision and
-Pattern Recognition (CVPR)},
-year={2021}
+@InProceedings{Shen_2021_CVPR,
+    author    = {Shen, Zhelun and Dai, Yuchao and Rao, Zhibo},
+    title     = {CFNet: Cascade and Fused Cost Volume for Robust Stereo Matching},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {13906-13915}
 }
 ```
