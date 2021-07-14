@@ -26,6 +26,7 @@ Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/
 please place the dataset as described in `"./filenames"`, i.e., `"./filenames/sceneflow_train.txt"`, `"./filenames/sceneflow_test.txt"`, `"./filenames/kitticombine.txt"`
 
 **Middlebury/ETH3D**
+
 Our folder structure is as follows:
 ```
 dataset
@@ -42,7 +43,7 @@ dataset
     │   ├── im1.png
     │   └── disp0GT.pfm
 ```
-Note that we use the full-resolution image of Middlebury for training. We will down-sample the input image to half-resolution during the data argumentation. In contrast,  we use the half-resolution image and full-resolution disparity of Middlebury for testing. 
+Note that we use the full-resolution image of Middlebury for training as the additional training images don't have half-resolution version. We will down-sample the input image to half-resolution in the data argumentation. In contrast,  we use the half-resolution image and full-resolution disparity of Middlebury for testing. 
 
 ## Training
 **Scene Flow Datasets Pretraining**
