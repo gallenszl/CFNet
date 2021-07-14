@@ -1,4 +1,4 @@
-# CFNet
+# CVPR 2021 CFNet
 This is the implementation of the paper CFNet: Cascade and Fused Cost Volume for Robust Stereo Matching, `CVPR 2021`, Zhelun Shen, Yuchao Dai, Zhibo Rao [\[Arxiv\]](https://arxiv.org/abs/2104.04314).
 
 Our method also obtains the `1st` place on the stereo task of `Robust Vision Challenge 2020`
