@@ -52,6 +52,8 @@ Note that we use the full-resolution image of Middlebury for training as the add
 
 run the script `./scripts/sceneflow.sh` to pre-train on Scene Flow datsets. Please update `DATAPATH` in the bash file as your training data path.
 
+To repeat our pretraining details. You may need to replace the Mish activation function to Relu. Samples is shown in `./models/relu/`
+
 **Finetuning**
 
 run the script `./scripts/robust.sh` to jointly finetune the pre-train model on four datasets,
