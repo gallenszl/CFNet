@@ -20,11 +20,29 @@ Recently, the ever-increasing capacity of large-scale annotated datasets has led
 ## Data Preparation
 Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html), [KITTI 2012](http://www.cvlibs.net/datasets/kitti/eval_stereo_flow.php?benchmark=stereo), [KITTI 2015](http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo), [ETH3D](https://www.eth3d.net/), [Middlebury](https://vision.middlebury.edu/stereo/)
 
+
 **KITTI2015/2012 SceneFlow**
 
 please place the dataset as described in `"./filenames"`, i.e., `"./filenames/sceneflow_train.txt"`, `"./filenames/sceneflow_test.txt"`, `"./filenames/kitticombine.txt"`
 
 **Middlebury/ETH3D**
+Our folder structure is as follows:
+```
+dataset
+├── KITTI2015
+├── KITTI2012
+├── Middlebury
+    │ ├── Adirondack
+    │   ├── im0.png
+    │   ├── im1.png
+    │   └── disp0GT.pfm
+├── ETH3D
+    │ ├── delivery_area_1l
+    │   ├── im0.png
+    │   ├── im1.png
+    │   └── disp0GT.pfm
+```
+Note that we use the full-resolution image of Middlebury for training. We will down-sample the input image to half-resolution during the data argumentation. In contrast,  we use the half-resolution image and full-resolution disparity of Middlebury for testing. 
 
 ## Training
 **Scene Flow Datasets Pretraining**
