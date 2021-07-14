@@ -23,6 +23,8 @@ Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/
 **KITTI2015/2012 SceneFlow**
 please place the dataset as described in `"./filenames"`, i.e., `"./filenames/sceneflow_train.txt"`, `"./filenames/sceneflow_test.txt"`, `"./filenames/kitticombine.txt"`
 
+**Middlebury/ETH3D**
+
 ## Training
 **Scene Flow Datasets Pretraining**
 
@@ -36,7 +38,7 @@ i.e., KITTI 2015, KITTI2012, ETH3D, and Middlebury. Please update `DATAPATH` and
 ## Evaluation
 **Joint Generalization**
 
-run the script `./scripts/eth3d_save.sh"`, `./scripts/mid_save.sh"` and `./scripts/kitti15_save.sh` to save png predictions on the test set of the ETH3D, Middlebury, and KITTI2015 datasets. Note that you may need to update the storage path of save_disp.py, i.e., `fn = os.path.join("/home3/raozhibo/jack/shenzhelun/cfnet/pre_picture/"`, fn.split('/')[-2]) Please update `--loadckpt` as your finetuned checkpoint file.
+run the script `./scripts/eth3d_save.sh"`, `./scripts/mid_save.sh"` and `./scripts/kitti15_save.sh` to save png predictions on the test set of the ETH3D, Middlebury, and KITTI2015 datasets. Note that you may need to update the storage path of save_disp.py, i.e., `fn = os.path.join("/home3/raozhibo/jack/shenzhelun/cfnet/pre_picture/"`, fn.split('/')[-2]).
 
 **Corss-domain Generalization**
 
