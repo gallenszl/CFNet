@@ -49,7 +49,6 @@ If you find this code useful in your research, please cite:
     pages     = {13906-13915}
 }
 ```
-
 # Acknowledgements
 
-Thanks to the excellent work GWCNet, Deeppruner, and Cascadestereo. Our work is inspired by these work and part of codes in `models` are migrated from [GWCNet](https://github.com/xy-guo/GwcNet), [DeepPruner](https://github.com/uber-research/DeepPruner/).
+Thanks to the excellent work GWCNet, Deeppruner, and Cascadestereo. Our work is inspired by these work and part of codes are migrated from [GWCNet](https://github.com/xy-guo/GwcNet), [DeepPruner](https://github.com/uber-research/DeepPruner/).
