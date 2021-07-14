@@ -64,6 +64,9 @@ run the script `./scripts/eth3d_save.sh"`, `./scripts/mid_save.sh"` and `./scrip
 
 run the script `./scripts/robust_test.sh"` to test the cross-domain generalizaiton of the model (Table.3 of the main paper). Please update `--loadckpt` as pretrained SceneFlow checkpoint file.
 
+## Pretrained Models
+[Pretraining Model](https://drive.google.com/file/d/1gFNUc4cOCFXbGv6kkjjcPw2cJWmodypv/view?usp=sharing)
+[Finetuning Moel](https://drive.google.com/file/d/1gFNUc4cOCFXbGv6kkjjcPw2cJWmodypv/view?usp=sharing)
 ## Citation
 If you find this code useful in your research, please cite:
 ```
