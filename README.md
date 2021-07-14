@@ -73,7 +73,7 @@ run the script `./scripts/robust_test.sh"` to test the cross-domain generalizait
 [Pretraining Model](https://drive.google.com/file/d/1gFNUc4cOCFXbGv6kkjjcPw2cJWmodypv/view?usp=sharing)
 You can use this checkpoint to reproduce the result we reported in Table.3 of the main paper
 
-[Finetuneing Moel](https://drive.google.com/file/d/1gFNUc4cOCFXbGv6kkjjcPw2cJWmodypv/view?usp=sharing)
+[Finetuneing Moel](https://drive.google.com/file/d/1H6L-lQjF4yOxq23wxs3HW40B-0mLxUiI/view?usp=sharing)
 You can use this checkpoint to reproduce the result we reported in the stereo task of Robust Vision Challenge 2020
 
 ## Citation
