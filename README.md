@@ -25,7 +25,7 @@ Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/
 
 run the script `./scripts/sceneflow.sh` to pre-train on Scene Flow datsets. Please update `DATAPATH` in the bash file as your training data path.
 
-**Joint Generalization**
+**Finetuning**
 
 run the script `./scripts/robust.sh` to jointly finetune the pre-train model on four datasets,
 i.e., KITTI 2015, KITTI2012, ETH3D, and Middlebury. Please update `DATAPATH` and `--loadckpt` as your training data path and pretrained SceneFlow checkpoint file.
