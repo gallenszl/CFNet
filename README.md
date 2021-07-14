@@ -25,16 +25,16 @@ Download [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/
 
 run the script `./scripts/sceneflow.sh` to pre-train on Scene Flow datsets. Please update `DATAPATH` in the bash file as your training data path.
 
-**Joint Generalizaiton**
+**Joint Generalization**
 
 run the script `./scripts/robust.sh` to jointly finetune the pre-train model on four datasets,
 i.e., KITTI 2015, KITTI2012, ETH3D, and Middlebury. Please update `DATAPATH` and `--loadckpt` as your training data path and pretrained SceneFlow checkpoint file.
 
 ## Evaluation
-**Joint Generalizaiton**
+**Joint Generalization**
 run the script `./scripts/eth3d_save.sh"`, `./scripts/mid_save.sh"` and `./scripts/kitti15_save.sh` to save png predictions on the test set of the ETH3D, Middlebury, and KITTI2015 datasets. Note that you may need to update the storage path of save_disp.py, i.e., `fn = os.path.join("/home3/raozhibo/jack/shenzhelun/cfnet/pre_picture/"`, fn.split('/')[-2]) Please update `--loadckpt` as your finetuned checkpoint file.
 
-**Corss-domain Generalizaiton**
+**Corss-domain Generalization**
 run the script `./scripts/robust_test.sh"` to test the cross-domain generalizaiton of the model (Table.3 of the main paper). Please update `--loadckpt` as pretrained SceneFlow checkpoint file.
 
 ## Citation
