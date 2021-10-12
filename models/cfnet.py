@@ -433,7 +433,7 @@ class cfnet(nn.Module):
             # elif isinstance(m, nn.Linear):
                 # m.bias.data.zero_()
 
-    def generate_search_range(self, sample_count, input_min_disparity, input_max_disparity):
+    def generate_search_range(self, sample_count, input_min_disparity, input_max_disparity, scale):
         """
         Description:    Generates the disparity search range.
 
@@ -443,9 +443,9 @@ class cfnet(nn.Module):
         """
 
         min_disparity = torch.clamp(input_min_disparity - torch.clamp((
-                sample_count - input_max_disparity + input_min_disparity), min=0) / 2.0, min=0, max=self.maxdisp)
+                sample_count - input_max_disparity + input_min_disparity), min=0) / 2.0, min=0, max=self.maxdisp // (2**scale) - 1)
         max_disparity = torch.clamp(input_max_disparity + torch.clamp(
-                sample_count - input_max_disparity + input_min_disparity, min=0) / 2.0, min=0, max=self.maxdisp)
+                sample_count - input_max_disparity + input_min_disparity, min=0) / 2.0, min=0, max=self.maxdisp // (2**scale) - 1)
 
         return min_disparity, max_disparity
 
@@ -544,7 +544,7 @@ class cfnet(nn.Module):
         mindisparity_s3 = F.upsample(mindisparity_s3 * 2, [left.size()[2] // 4, left.size()[3] // 4], mode='bilinear',
                                     align_corners=True)
 
-        mindisparity_s3_1, maxdisparity_s3_1 = self.generate_search_range(self.sample_count_s3 + 1, mindisparity_s3, maxdisparity_s3)
+        mindisparity_s3_1, maxdisparity_s3_1 = self.generate_search_range(self.sample_count_s3 + 1, mindisparity_s3, maxdisparity_s3, scale = 2)
         disparity_samples_s3 = self.generate_disparity_samples(mindisparity_s3_1, maxdisparity_s3_1, self.sample_count_s3).float()
         confidence_v_concat_s3, _ = self.cost_volume_generator(features_left["concat_feature3"],
                                                             features_right["concat_feature3"], disparity_samples_s3, 'concat')
@@ -574,7 +574,7 @@ class cfnet(nn.Module):
                                      align_corners=True)
 
 
-        mindisparity_s2_1, maxdisparity_s2_1 = self.generate_search_range(self.sample_count_s2 + 1, mindisparity_s2, maxdisparity_s2)
+        mindisparity_s2_1, maxdisparity_s2_1 = self.generate_search_range(self.sample_count_s2 + 1, mindisparity_s2, maxdisparity_s2, scale = 1)
         disparity_samples_s2 = self.generate_disparity_samples(mindisparity_s2_1, maxdisparity_s2_1, self.sample_count_s2).float()
         confidence_v_concat_s2, _ = self.cost_volume_generator(features_left["concat_feature2"],
                                                             features_right["concat_feature2"], disparity_samples_s2, 'concat')
@@ -640,7 +640,7 @@ class cfnet(nn.Module):
             costmid_s2 = self.confidence_classifmid_s2(out1_s2).squeeze(1)
             costmid_s2 = F.softmax(costmid_s2, dim=1)
             predmid_s2 = torch.sum(costmid_s2 * disparity_samples_s2, dim=1, keepdim=True)
-            predmid_s2 = F.upsample(predmid_s2 * 4, [left.size()[2], left.size()[3]], mode='bilinear',
+            predmid_s2 = F.upsample(predmid_s2 * 2, [left.size()[2], left.size()[3]], mode='bilinear',
                                      align_corners=True)
             predmid_s2 = torch.squeeze(predmid_s2, 1)
 
